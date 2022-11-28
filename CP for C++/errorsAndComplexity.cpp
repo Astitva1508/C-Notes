@@ -15,5 +15,4 @@ void TimeComplexity(){
 
 
 int main(){
-    LogarihtmicTimeComplexity();
 }
