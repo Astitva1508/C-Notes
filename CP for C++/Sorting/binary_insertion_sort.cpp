@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Our approach is to divide the array into two subarrays
-// The sorted one on the left and the unsorted one on the right
-
 void swap(int *a, int *b)
 {
     int temp = *b;
@@ -19,6 +16,30 @@ void PrintArray(int *arr, int n)
     }
 }
 
+int BinarySearchForIndex(int *arr, int n, int key)
+{
+    int l = 0;
+    int r = n;
+    while (l < r)
+    {
+        int midIndex = (l + r) / 2;
+        if (arr[midIndex] < key)
+        {
+            l = midIndex + 1;
+        }
+        else if (arr[midIndex] > key)
+        {
+            r = midIndex - 1;
+        }
+        else if (arr[midIndex] == key)
+            return midIndex + 1;
+    }
+    if (arr[l] > key)
+        return l;
+    else
+        return (l + 1);
+}
+
 int main()
 {
     int n;
@@ -32,13 +53,14 @@ int main()
     {
         int key = arr[i];
         int j = i - 1;
-        while (arr[j] > key && j >= 0)
+        int desiredIndex = BinarySearchForIndex(arr, j, key);
+        while (j >= desiredIndex)
         {
             arr[j + 1] = arr[j];
             j -= 1;
         }
         arr[j + 1] = key;
-        PrintArray(arr, n);
     }
+    PrintArray(arr,n);
     return 0;
 }
