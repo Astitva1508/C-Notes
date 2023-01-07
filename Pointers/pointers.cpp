@@ -2,6 +2,11 @@
 #include<memory>
 using namespace std;
 
+void testing(){
+    
+    return ;
+}
+
 class PointerDemonstration{
     public:
     PointerDemonstration(){
@@ -13,13 +18,13 @@ class PointerDemonstration{
 };
 
 void smartPointers(){
-    // A void pointer is a container or a wrapper for a raw pointer and they deallocate memory automatically. 
+    // A smart pointer is a container or a wrapper for a raw pointer and they deallocate memory automatically. 
     // Types of smart pointers: Unique , Shared and weak
-    // Need to include memory to use smart pointers
+    // Need to #include<memory>  to use smart pointers
 
     //Creation of a Unique Pointer
     unique_ptr<int>unqPtr = make_unique<int>(25);
-    //unique_ptr<int>unqPtr creates a unique pointer with the name of unqPtr and to store the address of some integer and then the make_unique<int> method is used to create a unique pointer of type int.The value in the argument is the one that is stored at the address stored in uniquePtr
+    //unique_ptr<int>unqPtr creates a unique pointer with the name of unqPtr to store the address of some integer and then the make_unique<int> method is used to create a unique pointer of type int.The value in the argument is the one that is stored at the address stored in uniquePtr
     //Unique Pointers cannot be shared.i.e Two unique pointers cannot store the same address
     // unique_ptr<int>unqPtr2 = unqPtr; //throws an error
     //We can however move the ownership of a uniqie pointer and in this case the previous owner becomes NULL Pointer and if we try to access the value stored at the previous owner , we get a NULL_POINTER_EXCEPTION

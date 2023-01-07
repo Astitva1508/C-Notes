@@ -1,0 +1,8 @@
+STL has 4 components
+1. Iterators        2. Functors 
+3. Algorithm        4. Containers
+
+Containers are Data Structures pre-implemented in STL
+    Sequential 
+    Ordered
+    UnOrdered
