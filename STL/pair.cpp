@@ -22,6 +22,8 @@ int main(){
     // Accessing a Pair
     cout<<p1.first<<" "<<p.second<<endl;
 
+    // Use Of Pairs:To maintain relationship between two entities
+
 
     return 0;
 }
