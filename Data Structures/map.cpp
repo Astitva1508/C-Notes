@@ -53,6 +53,8 @@ void UnorderedMap()
     unorderedMap.insert(pair<string, string>("Ram", "Singh"));
     unorderedMap.insert(pair<string, string>("Arihant", "Singh"));
     unorderedMap.insert(pair<string, string>("Krishna", "Yadav"));
+    unorderedMap.insert({"Rajat","Sharma"});
+    unorderedMap.insert(make_pair("Sumit","Chaubey"));
 
     for (auto pair : unorderedMap)
         cout << pair.first << " : " << pair.second << endl;
