@@ -5,7 +5,8 @@ void basicTheoryMultiMaps(){
     multimap<int,string> m;
     // Internally implemented using Red Black Trees
     // Keys in multimap are need not be unique
-}
+    // Instead of using multimaps for storing multiple values corresponding to a key, we use a map and make value field a vector or set
+    }
 
 
 
@@ -46,6 +47,9 @@ void basicTheoryMaps()
     // Whenever we insert a new value into the map , its compared to the existing values. (Internally, log(n) comparisons take place). Now if the key is a string , time for string comparison also adds up[kyonki string character by character compare hongi]. So overall complexity becomes O(log(n)*lengthOfString)
 
     // To take input of a string of size n , time taken is O(n)
+
+    // Maps and Multimaps both are compared(and hence sorted) based on keys only
+
 }
 
 void basicTheoryUnOrderedMaps()
