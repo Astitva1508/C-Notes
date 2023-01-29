@@ -1,0 +1,66 @@
+Arrangement of Data in the main memory in different ways leads to different Data Structures
+
+variable sized arrays cannot be initialized
+
+Main Memory is divided mainly into three sections:
+    Code Section (where set of instructions to be performed is stored in machine language)
+    Stack (for every function in the code section , its stack frame is created inside the stack. And inside the stack frame of a particular function , all its variables are stored)
+    Heap (Used for dynamic memory allocation)
+Program can directly access the code section and stack but not the heap. Heap memory viz ecternal to the program is accessed using Pointers
+
+// Concept of Structure Padding and Packing
+
+Uses of Pointers
+1. accessing the memory/resources outside the program
+2. accessing the hard disk, keyboard , monitor etc
+3. call by reference
+
+Every variable which is declared is inside the stack
+
+In Pointers , the * operator is used only at the time of declaration and dereferening
+Regardless of the data type of pointer, it takes the same amount of memory
+
+Reference is just an alias given to a variable
+References must be initialized while declaration
+You cannot change the reference to point to some other variable
+A Reference is not a pointer(We have constant pointers but they are not the same as references)
+A Reference does not consume memory
+
+While the initialization:
+    Nothing before the variable name : Data variable
+    * before the variable name : Pointer or Address Variable 
+    & before the variable name: Reference
+
+Mechanisms of Parameter Passing to a function
+Call By Value : values passed as actual parameters are copied into the formal parameters
+Call By Address : addresses of actual parameters are passed to the formal parameters and formal parameters must be pointers
+Call By Reference : formal parameters are references
+
+Mechanism for Call By Reference:
+One function cannot access the variables of another function directly
+In the reference mkn,(thought we can't be sure)
+    Inside the main memory's code section. the function getting called is no longer a seperate function but becomes part of the function which calls it.
+    Due to this , another stack frame is not created for the function getting called and all its variables are declared in the stack frame of the calling function.
+    However , when the called function ends , its variables are deleted from the stack frame.
+    Machine Code becomes monolithic even though the program code is modular
+    Long Story Short, Functions in which parameters are passed by reference are interpreted by compiler as inline Functions
+
+Dealing with arrays in Functions
+    1. Arrays cannot be passed by values at all.
+    2. Passing Arrays as Parameters ->funName(int arr[],int size) or funName(int *arr,int size)
+        The difference between int arr[] and int *arr is that the first one is a pointer to an array while the second one is a pointer to an integer.
+        int arr[] implies that it is not an array but a pointer to an array.
+    3. Calling A Function with Array as Pointer -> funName(A,5)
+        Here , A is the name of the array. Note that the name of the array is the address of the array
+    4. Returning Arrays from a function
+        int arr[] funName(); or int arr* funName()
+        The first way is not understood by some compilers
+    5. It is possible to send array as a parameter in pass by value only if its inside the structure
+    6. While passing an array , if we dont provide its size and use the below expression to calculate the size : sizeof(arr)/sizeof(int) , it gives wrong output because the arr is a pointer to an array having size of 8 bytes.(And not the actual size of the array) Similarily we cannot use forEach loop on the arr.
+
+If you create anything in heap , it can be accessed anywhere in the program if the pointer is available to it.
+
+
+
+
+
