@@ -1,0 +1,46 @@
+// By Taking common , we can reduce the number of multiplications. e.g. for Taylor Series. This may also help to reduce the number of recusrive calls
+
+// If you find it difficult to write the recursive version , write the iterative version first and then think of recursive version
+
+// Static Variables play a key role in solving some of the problems using recursion
+
+// Excessive Recusrion is when a recursive function calls itself multiple times for the same value.
+e.g Fibonacci Series : Using memoization , we can convert it into normal Recusrion
+
+// When we have to succesively calculate more than one things and write the code using recursion, then we use of static Variables
+e.g Power(a raised to b) can be calculated using recusrion 
+    Sum (N natural numbers) can be calculated using recursion
+    But the sum of powers (1 + x + x^2 + x^3 ...) can be calculated using recusrion using the static variables 
+
+Code Examples : 
+int powerSum(int num , int pow){
+    if (pow==0) return 1 ; 
+    static int op = 1;
+    int r = powerSum(num , pow-1);
+    op*=num;
+    return op+r;
+}
+
+int powerSum1(int num , int pow){
+    if (pow==0) return 1;
+    static int op = 1;
+    op*=num;
+    int x = op;
+    return powerSum1(num,pow-1)+x;
+}
+
+// Taylor Series Using Horner Rule 
+static double output = 1 ;
+void taylorUsingHorner(int num  , int pow){
+    if (pow==0) return;
+    double myContribution = num/(double)pow;
+    output = output*(myContribution) +1;
+    taylorUsingHorner(num,pow-1);
+}
+// When we need to compute something at the calling time rather than returning time , we can make use of static variables as shown above .
+
+// Problem for Tower Of Hanoi : It also explains how we can generate the idea for small things and the larger value(n) will follow the same approach
+
+// Tracing of recursion is done using trees
+
+
