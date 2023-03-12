@@ -6,21 +6,12 @@ class Node{
     int Value;
     Node *Next;
 };
+
 void insertAtTheFrontMyWay(Node **headAddress, int value);
 void printLinkedList(Node *node);
 void insertAtTheEnd(Node **head, int value);
-void insertAfter(Node *prevNode,int value){
-    //Steps to Insert a Node after a specific Node
-    // Check if previous node is null
-    if (prevNode == NULL)
-        return;
-    // Prepare a newNode
-    Node *newNode = new Node();
-    newNode->Value = value;
-    newNode->Next = prevNode->Next;
-    // Insert newNode after previous
-    prevNode->Next = newNode;
-}
+void insertAfter(Node *prevNode,int value);
+
 int main(){
     Node *head = new Node();
     Node *second = new Node();
@@ -141,3 +132,16 @@ void insertAtTheEndError(Node **head, int value)
     (*head)->Next = newNode;
 }
 
+void insertAfter(Node *prevNode, int value)
+{
+    // Steps to Insert a Node after a specific Node
+    //  Check if previous node is null
+    if (prevNode == NULL)
+        return;
+    // Prepare a newNode
+    Node *newNode = new Node();
+    newNode->Value = value;
+    newNode->Next = prevNode->Next;
+    // Insert newNode after previous
+    prevNode->Next = newNode;
+}

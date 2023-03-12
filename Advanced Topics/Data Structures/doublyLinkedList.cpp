@@ -57,7 +57,7 @@ int main(){
 
     Node* head;
     Node* tail;
-    Node *node = new Node(); //Reason we use pointers to create nodes (or doubly linked lists) because linked lists are implemented with pointess because we are dynamically changing the size and elements of the list
+    Node *node = new Node(); //Reason we use pointers to create nodes (or doubly linked lists) because linked lists are implemented with pointers because we are dynamically changing the size and elements of the list
 
     node->Value=1;
     node->Previous = NULL;

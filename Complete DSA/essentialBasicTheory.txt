@@ -1,6 +1,6 @@
-Arrangement of Data in the main memory in different ways leads to different Data Structures
+The arrangement of Data in the main memory in different ways leads to different Data Structures
 
-variable sized arrays cannot be initialized
+variable-sized arrays cannot be initialized
 
 Main Memory is divided mainly into three sections:
     Code Section (where set of instructions to be performed is stored in machine language)
