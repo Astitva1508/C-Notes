@@ -1,0 +1,17 @@
+Commonly Used Terms
+Root
+Node
+Leaf
+Parent
+Children
+Ancestors
+SubTree
+
+Types of Binary Trees
+Full : every node has either 0 or 2 Children
+Complete : all levels are completely filled except the last levels
+           the last level has all nodes in left as possible 
+Perfect : all leaf nodes are at the same level
+Balances Binary Tree : maximum height of the tree is log(n) where n is no of nodes
+Degenerate Tree(Skew Tree) : height of the tree is n where n is no of nodes
+ 

@@ -1,0 +1,6 @@
+Print All Possible Subsets:
+  1. Power Set Algorithm (To Do)
+  2. Strivers Approach  ->  Pick / Not Pick
+  3. Optimized Approach ->  Make all subsets of length->(0 to n)
+  4. Iterative (To Do)
+  5. Bit Manipulation  (To Do)
