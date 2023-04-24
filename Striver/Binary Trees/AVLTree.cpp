@@ -9,29 +9,16 @@ public:
     TreeNode *right;
     int height;
     TreeNode() : val(0), left(nullptr), right(nullptr),height(1){};
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr),height(1){};
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right),height(1){};
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr), height(1){};
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right), height(1){};
 };
 
 void levelOrder(TreeNode *node);
 void traverseInorder(TreeNode *root);
+void traversePreOrder(TreeNode *root);
 TreeNode *findInorderPredecessor(TreeNode *node);
-TreeNode *deleteBST(TreeNode *root, int element);
-TreeNode *insertBST(TreeNode *root, int element);
 int height(TreeNode *root);
 int getBalanceFactor(TreeNode *root);
-
-TreeNode *insertBST(TreeNode *root, int element)
-{
-    if (root == nullptr) return root = new TreeNode(element);
-
-    if (root->val > element) root->left = insertBST(root->left, element);
-    else root->right = insertBST(root->right, element);
-
-
-    root->height = max(height(root->right),height(root->left))+1;
-    return root;
-}
 
 TreeNode *rightRotate(TreeNode * parent)
 {
@@ -42,10 +29,9 @@ TreeNode *rightRotate(TreeNode * parent)
 
     x->height = max(height(x->left),height(x->right))+1;
     parent->height = max(height(parent->left),height(parent->right))+1;
-    
+
     return x;
 }
-
 
 TreeNode *leftRotate(TreeNode*parent){
     TreeNode *x = parent->right;
@@ -59,16 +45,57 @@ TreeNode *leftRotate(TreeNode*parent){
     return x;
 }
 
+TreeNode *insertAVL(TreeNode *root, int element)
+{
+    if (root == nullptr)
+        return (new TreeNode(element));
+
+    if (root->val > element)
+    {
+        root->left = insertAVL(root->left, element);
+    }
+    else
+    {
+        root->right = insertAVL(root->right, element);
+    }
+    int z = getBalanceFactor(root);
+    if (z > 1)
+    {
+        if (element>root->right->val)
+        {
+            root = leftRotate(root);
+        }
+        else
+        {
+            root->right = rightRotate(root->right);
+            root = leftRotate(root);
+        }
+    }
+    else if (z < -1)
+    {
+        if (element<root->left->val)
+        {
+            root = rightRotate(root);
+        }
+        else
+        {
+            root->left = leftRotate(root->left);
+            root = rightRotate(root);
+        }
+    }
+    root->height = max(height(root->right), height(root->left)) + 1;
+    return root;
+}
+
+
 int main()
 {
-    TreeNode *root = new TreeNode(5);
-    root->left = new TreeNode(3);
-    root->left->left = new TreeNode(2);
-    root->left->right = new TreeNode(4);
-    root->left->left->left = new TreeNode(8);
-    root->right = new TreeNode(6);
-    root->right->left = new TreeNode(7);
-    root->right->right = new TreeNode(7);
+    TreeNode*root = insertAVL(root,10);
+    root= insertAVL(root,20);
+    root= insertAVL(root,30);
+    root= insertAVL(root,40);
+    root= insertAVL(root,50);
+    root= insertAVL(root,25);
     return 0;
 }
 
@@ -79,6 +106,15 @@ void traverseInorder(TreeNode * root)
     traverseInorder(root->left);
     cout << root->val << " ";
     traverseInorder(root->right);
+}
+
+void traversePreOrder(TreeNode *root)
+{
+    if (root == nullptr)
+        return;
+    cout << root->val << " ";
+    traversePreOrder(root->left);
+    traversePreOrder(root->right);
 }
 
 void traverseLevelOrder(TreeNode * root)
@@ -102,19 +138,6 @@ void traverseLevelOrder(TreeNode * root)
         }
     }
     cout << endl;
-}
-
-TreeNode *insertBST(TreeNode * root, int element)
-{
-    if (root == nullptr)
-        return root = new TreeNode(element);
-
-    if (root->val > element)
-        root->left = insertBST(root->left, element);
-    else
-        root->right = insertBST(root->right, element);
-
-    return root;
 }
 
 TreeNode *findInorderPredecessor(TreeNode * node)
@@ -168,22 +191,6 @@ TreeNode *deleteBST(TreeNode * root, int element)
     return root;
 }
 
-TreeNode *insertBST(TreeNode *root, TreeNode *child)
-{
-    if (root == nullptr)
-        return child;
-
-    if (root->val > child->val)
-    {
-        root->left = insertBST(root->left, child);
-    }
-    else
-    {
-        root->right = insertBST(root->right, child);
-    }
-    return root;
-}
-
 int height(TreeNode *root)
 {
     if (root == nullptr)
@@ -195,6 +202,6 @@ int getBalanceFactor(TreeNode *root)
 {
     if (root == nullptr)
         return 0;
-    return height(root->left) - height(root->right);
+    return height(root->right) - height(root->left);
 }
 
