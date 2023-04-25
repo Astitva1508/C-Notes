@@ -87,15 +87,77 @@ TreeNode *insertAVL(TreeNode *root, int element)
     return root;
 }
 
+TreeNode *deleteAVL(TreeNode *root,int element){
+    if (root == nullptr)
+        return nullptr;
+    if (root->val == element)
+    {
+        if (!root->left && !root->right)
+        {
+            delete root;
+            return nullptr;
+        }
+        else if (root->left && !root->right)
+        {
+            TreeNode *x = root->left;
+            delete root;
+            return x;
+        }
+        else if (!root->left && root->right)
+        {
+            TreeNode *x = root->right;
+            delete root;
+            return x;
+        }
+        else
+        {
+            TreeNode *desired = findInorderPredecessor(root);
+            int x = desired->val;
+            root = deleteAVL(root, x);
+            root->val = x;
+            return root;
+        }
+    }
+
+    else if (root->val > element)
+        root->left = deleteAVL(root->left, element);
+    else
+        root->right = deleteAVL(root->right, element);
+
+
+    int z = getBalanceFactor(root);
+    if(z>1){
+        int y = getBalanceFactor(root->right);
+        if(y>=0){
+            root = leftRotate(root);
+        }else if(y<0){
+            root->right = rightRotate(root->right);
+            root = leftRotate(root);
+        }
+    }else if(z<-1){
+        int y = getBalanceFactor(root->left);
+        if(y<=0){
+            root = rightRotate(root);
+        }else if(y>0){
+            root->left= leftRotate(root->left);
+            root = rightRotate(root);
+        }
+    }
+
+    root->height = max(height(root->right), height(root->left)) + 1;
+    return root;
+}
 
 int main()
 {
     TreeNode*root = insertAVL(root,10);
-    root= insertAVL(root,20);
-    root= insertAVL(root,30);
-    root= insertAVL(root,40);
-    root= insertAVL(root,50);
-    root= insertAVL(root,25);
+    root= insertAVL(root,13);
+    root= insertAVL(root,8);
+    root= insertAVL(root,15);
+    root= insertAVL(root,11);
+    // root= insertAVL(root,25);
+    root=deleteAVL(root,8);
+    traversePreOrder(root);
     return 0;
 }
 
@@ -148,47 +210,6 @@ TreeNode *findInorderPredecessor(TreeNode * node)
     while (node->right != nullptr)
         node = node->right;
     return node;
-}
-
-TreeNode *deleteBST(TreeNode * root, int element)
-{
-    if (root == nullptr)
-        return nullptr;
-    if (root->val == element)
-    {
-        if (!root->left && !root->right)
-        {
-            delete root;
-            return nullptr;
-        }
-        else if (root->left && !root->right)
-        {
-            TreeNode *x = root->left;
-            delete root;
-            return x;
-        }
-        else if (!root->left && root->right)
-        {
-            TreeNode *x = root->right;
-            delete root;
-            return x;
-        }
-        else
-        {
-            TreeNode *desired = findInorderPredecessor(root);
-            int x = desired->val;
-            root = deleteBST(root, x);
-            root->val = x;
-            return root;
-        }
-    }
-
-    if (root->val > element)
-        root->left = deleteBST(root->left, element);
-    else
-        root->right = deleteBST(root->right, element);
-
-    return root;
 }
 
 int height(TreeNode *root)
