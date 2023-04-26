@@ -14,10 +14,33 @@ public:
 };
 
 void traverseInorder(TreeNode *root);
+void levelOrder(TreeNode *node);
 
+void balanceHeap(TreeNode *root)
+{
+    if(root==nullptr) return;
+    balanceHeap(root->left);
+    balanceHeap(root->right);
 
+    while(true){
+        if (!root->right && !root->left) return;
+        int leftVal = root->left?root->left->val:INT_MIN;
+        int rightVal = root->right?root->right->val:INT_MIN;
 
-TreeNode* insertHeap(TreeNode* root,int element){
+        if(leftVal>rightVal && leftVal>root->val){
+            swap(root->left->val,root->val);
+            root = root->left;
+        }else if(rightVal>leftVal && rightVal>root->val){
+            swap(root->right->val,root->val);\
+            root = root->right;
+        }else{
+            return;
+        }
+    }
+}
+
+TreeNode * insertHeap(TreeNode *root, int element)
+{
     if(root==nullptr) return new TreeNode(element);
     queue<TreeNode*> q;
     q.push(root);
@@ -26,6 +49,7 @@ TreeNode* insertHeap(TreeNode* root,int element){
         int size = q.size();
         while(size--){
             TreeNode *x = q.front();
+            q.pop();
             if(x->left) q.push(x->left);
             else{
                 x->left = new TreeNode(element);
@@ -41,13 +65,25 @@ TreeNode* insertHeap(TreeNode* root,int element){
             }
         }
     }
+    return root;
 }
 
 int main()
 {
-
+    TreeNode *root = nullptr;
+    int n;
+    cin>>n;
+    int x;
+    while(n--){
+        cin>>x;
+        root = insertHeap(root,x);
+    }
+    balanceHeap(root);
+    levelOrder(root);
     return 0;
 }
+
+
 
 void traverseInorder(TreeNode *root)
 {
@@ -56,4 +92,27 @@ void traverseInorder(TreeNode *root)
     traverseInorder(root->left);
     cout << root->val << " ";
     traverseInorder(root->right);
+}
+
+void levelOrder(TreeNode *node)
+{
+    if (node == nullptr)
+        return;
+    queue<TreeNode *> q;
+    q.push(node);
+    while (!q.empty())
+    {
+        int size = q.size();
+        while (size--)
+        {
+            TreeNode *x = q.front();
+            q.pop();
+            cout << x->val << " ";
+            if (x->left)
+                q.push(x->left);
+            if (x->right)
+                q.push(x->right);
+        }
+    }
+    cout << endl;
 }

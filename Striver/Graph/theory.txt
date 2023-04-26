@@ -1,0 +1,23 @@
+// Nodes/Vertices
+// Edge
+// Graph = nodes + edges
+// Two Classifications of Graphs :
+    // Cyclic / Acyclic
+    // Directed / Undirected
+// Path : [1] contains a lot of nodes and each of them are reachable from the previous node
+//        [2] A node cannot appear twice in a path
+//        [3] the adjacent nodes must have an edge between them
+// Degree of an undirected graph : number of edges(inward/outward) from a graph
+// Directed Graph has an indegree and an outdegree
+
+// Total degree of a graph = 2*(no of edges)
+
+// Representations:
+    // Adjacency Matrix : space complexity : O(V^2)
+    // Adjacency List : space complexity is O(2*E) for undirected and O(E) for directed graph
+
+// Methods to store Weighed Graphs
+    // Adjacency Matrix
+    // Adjacency List (vector<vector<pair<int,int>>) where each pair's first index is node and second index is weight
+
+// For every traversal, you gotta use the visited array
