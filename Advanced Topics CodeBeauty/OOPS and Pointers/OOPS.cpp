@@ -59,8 +59,8 @@ void PillarsOfOOPS(){
     //3. Inheritance
     //4. Polymorphism
 
-    //Encapsulations is bundling data and methods that operate on it.Idea behind this is to preveny anyone outside the class to directly access the data and change it.
-    //Others access and modify the data not directly but through getters and 
+    //Encapsulations is bundling data and methods that operate on it.Idea behind this is to prevent anyone outside the class to directly access the data and change it.
+    //Others access and modify the data not directly but through getters and setters.
     //We can provide special rules (for getters and setters) to interact with the data.(e.g. setAge())
 
     //Abstraction is hiding complex things behind a procedure that make those things look simple(user knows the output but does not know how we arrived at it ).Class acts as an interface between logic and output
@@ -119,7 +119,7 @@ void Constructor(){
     // Same name as the class which it belongs to
     // Must be public.(in certain situations , it can be private.Not for now)
 
-    // When we create a constructor , we lose the default constructor that was automatically gneerated.To fix this error, either make your own default constructor or by triggering your constructor at time of creation of object as shown
+    // When we create a constructor , we lose the default constructor that was automatically generated.To fix this error, either make your own default constructor or by triggering your constructor at time of creation of object as shown
     // Employee Ram = Employee(24, "Ram"); // Or
     // Employee Shyam(25, "Shyam");
 

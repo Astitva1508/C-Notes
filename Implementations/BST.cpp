@@ -127,7 +127,7 @@ TreeNode *deleteBST(TreeNode *root, int element)
         {
             TreeNode*desired = findInorderPredecessor(root);
             int x = desired->val;
-            root = deleteBST(root,x);
+            root = deleteBST(desired,x);
             root->val = x;
             return root;
         }

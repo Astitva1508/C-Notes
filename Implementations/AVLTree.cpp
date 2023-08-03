@@ -113,7 +113,7 @@ TreeNode *deleteAVL(TreeNode *root,int element){
         {
             TreeNode *desired = findInorderPredecessor(root);
             int x = desired->val;
-            root = deleteAVL(root, x);
+            root = deleteAVL(desired, x);
             root->val = x;
             return root;
         }
