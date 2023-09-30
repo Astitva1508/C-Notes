@@ -1,5 +1,3 @@
-
-// void changePriority(int index,int newPriority)
 #include<bits/stdc++.h>
 using namespace std;
 

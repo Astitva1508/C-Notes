@@ -1,0 +1,210 @@
+What is OS?
+Operating System (OS) is a software program that manages and handles all resources of a computer.
+Acts as an intermediary among users of computer and computer hardware. 
+
+Functions of OS:
+    Security 
+    File Management 
+    Deadlock Management
+    Process Sheduling 
+    Resource Allocation
+    Memory Management
+
+Types of OS
+    Batch OS : does not interact with the computer directly (Bank Statements)
+    Timesharing OS : Round Robin Type (Multics)
+    Multiprogrammed OS : more than one programs can be present in the main memory at the same Time (Windows, Linux)
+    Real Time OS : serve real time systems where the time constrainst are very strict(PSOS)
+                   takes care of execution, monitoring, and all-controlling processes.It also occupies less memory and consumes fewer resources. 
+                    Used in Air Traffic  Control Systems
+
+    Distributed OS : autonomous interconnected computers communicate with each other using a shared communication network. e.g. LOCUS
+
+
+RAID Structure in OS (Redundant Arrays of Independent Disks)
+    Data Storage Virtualization Technique
+    store data on Multiple hard disks
+    Increase data redundancy to remove data loss
+
+    RAID 0 - Non-redundant striping: This level is used to increase the performance of the server.
+    RAID 1 - Mirroring and duplexing: This level is also known as disk mirroring and is considered the simplest way to implement fault tolerance.
+    RAID 2 - Memory-style error-correcting codes: This level generally uses dedicated hamming code parity I.e., a liner form of error correction code.
+    RAID 3 - Bit-interleaved Parity: This level requires a dedicated parity drive to store parity information.
+    RAID 4 - Block-interleaved Parity: This level is similar to RAID 5 but the only difference is that this level confines all parity data to a single drive.
+    RAID 5 - Block-interleaved distributed Parity: This level provides far better performance than disk mirroring and fault tolerance.
+    RAID 6 - P+Q Redundancy: This level generally provides fault tolerance for two drive failures.
+
+What is a Pipe and when used?
+Used in IPC for message passing
+it is a connection among two or more processes that are related to each other
+
+Atmoic Operations on Semaphore :
+    Wait() and Signal();
+
+Bootstrap Program
+    First program that is executed when the computer starts and locates the OS
+    Locates the kernel and loads it into the main memory
+
+Demand Paging
+    Concept used in Virtual Memory to load pages into main memory only on demand
+
+Process Synchronization
+
+IPC Mechanisms:
+    Pipes
+    Message Queuing
+    Semaphores
+    Socket
+    Shared Memory
+    Signals
+
+Overlays:
+    programming method that divides the program into parts and keeps only the part of the program in memory is called Overlay
+
+Virtual Memory :
+    more no of programs can be stored in the main memory at the same time 
+    
+Process : 
+    Program Under execution
+    When program becomes a process : divided into Stack, Heap ,Text and Data
+
+States of Process:
+    New 
+    Ready
+    Running 
+    Waiting 
+    Terminated
+
+Threads :
+    path of execution composed of a program counter ,thread id , stack and set of registers within the process
+    Have their own stack but access shared data 
+    makes communication efficient
+    enables utilization of multiprocessor architecture 
+    Each thread has its own: Program counter, Registers, Stack, and State.
+    Multiple threads running in a process share: Address space, Heap, Static data, Code segments, Global variables, Child processes, Signals, and signal handlers.  
+
+Reentrancy :
+    a function in which various clients can use and share a single copy of program during a similar period
+    Program code cannot change or modify itself.
+    Local data for every client process needs to be stored in different disks.
+
+CPU Sheduling Algo :
+    FCFS
+    SJF
+    SRTF
+    Round Robin
+    Priority Sheduling
+    Multi Level Queue Sheduling
+
+Paging vs Segmentation :
+    invisible to programmer 
+    fixed size pages
+    data and methods cant be seperated
+    internal fragmentation
+    OS needs to maintain a free frame (vs holes)
+    Faster
+
+Thrashing
+    When more time of CPU goes into PFST
+
+Main Purpose of MultiProgramming
+    ensures maximum CPU utilization
+    have at least some process running at all time 
+
+Assymetric Clustering 
+    system in which one of the nodes among all nodes is in hot standby mode whereas the rest of all nodes run different applications
+    Uses entire hardware resources
+
+Multitasking vs Multiprocessing 
+    more than one tasks on a single CPU
+    economical
+    less efficient
+    allows fast swithcing
+
+Sockets in OS
+    en endpoint for IPC
+    endpoint is the combination of IP adress and port number
+    make it easy for software developers to create network enabled programs
+
+
+Zombie/Defunct Process :
+    a process that is terminated or completed but the whole PCB is not cleaned up from the main memory because it still has an entry in the process table to report to its parent process
+    does not comsume resources and dead 
+
+Cascading Termination :
+    if the parent process is exiting or terminating then the children process will also get terminated
+
+Startvations and Aging
+
+Semaphores :
+    Synchronization Mechanisms used in IPC to provide access to shared resources
+    maintains a count of available resources
+    provides two atomic operations: wait() and signal()
+
+    Binary Semaphores and Counting Semaphores
+
+Binary Semaphore and Mutex : 
+    an interger that can hold 0 and 1 v/s an object that holds a lock and info(about who holds the lock and number of processes waiting)
+    used for signalling the availability of a single resource vs ensures that only one thread acquires a lock
+    Based on Signalling Mec vs Lockinng Mkn  
+
+
+Kernel and Functions 
+    computer program viz central component of OS
+    comtrols and manages all the primary tasks of OS
+
+
+Types of Kernel :
+    Monolithic Kernel
+    MicroKernel
+    Hybrid Kernel 
+    Nano Kernel
+    Exo Kernel
+
+Micro Kernel vs Monolithic Kernel :
+    minimal OS that executes only important functions of OS(Mac OS X,) vs 
+    OS architecture that supports all basic features of computer components (Linux)
+
+    smaller in size 
+    easily extendible
+    uses message queues vs (sockets and signals)   for IPC
+
+Symmetric Multiprocessing
+    processing of program is done by multiple processors that that share a common OS and momory
+    more reliable 
+    allows any processor to take up any tasks
+
+Time Sharing Systems 
+    allow more than one users to access the resources of a system in many locations
+
+Context Switching
+    saving the context of one and loading of another process
+    allows multiprogramming
+
+
+kernel vs OS
+    central component of OS vs system software
+    converts user commands to machine level vs rerousce Allocation
+    interface between hardware (and applications) vs (and user)
+
+Process vs Thread
+
+
+Sections of a Program :
+    Stack : used for local variables and returns addresees
+    Heap : dynamic memory alloacation
+    Data : gloabal and static variables
+    Text : compiled program code
+
+DeadLock and Conditions:
+    Conditions : Mutual Exclusion
+                 Hold and Wait
+                 No Pre-emption
+                 Circular Wait or Resource Wait
+    
+Beladys Anomaly : in FIFO, on increasing the number of frames,page fault increases
+
+Spooling ?
+    Simultaneous Peripheral Operations Online 
+    refers to putting data of various I/0 Jobs in a buffer(a special area in memory or hard disk that can be accessible to an I/O device)
+    important because devices access or acquire data at different rates

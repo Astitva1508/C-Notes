@@ -4,3 +4,7 @@ Print All Possible Subsets:
   3. Optimized Approach ->  Make all subsets of length->(0 to n)
   4. Iterative (To Do)
   5. Bit Manipulation  (To Do)
+
+Why low in the case of BinarySearch gives the index where the element needs to be added
+
+Try to think of the graph in terms of Indegree and Outdegree

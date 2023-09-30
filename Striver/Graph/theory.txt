@@ -20,4 +20,30 @@
     // Adjacency Matrix
     // Adjacency List (vector<vector<pair<int,int>>) where each pair's first index is node and second index is weight
 
-// For every traversal, you gotta use the visited array
+// For every traversal, you gotta use the visited array(otherwise you may miss out entire traversal if the graph has more than one connected components)
+// Traversal Algorithms are designed such that they cover the entire connected portion of the graph
+
+// DFS, BFS, MultiSource BFS, Multiple States for Visited Array, Topo, Kahn's Algo
+// Backtracking With BFS(Word Ladder II) and Storing Paths in queue for BFS(Word Ladder II)
+// Usecases of Parent Array as in case of disjoint set
+// Bipartite Graph : Graph with odd cycle length (based upon observation)
+
+
+// Shortest Path in DAG : 
+        1. Topo Will Work (Nice Code)
+        2. Dijkstra also works 
+        3. Can also use queue (magar ek node ke corresponding ho sakta hai multiple baar relax karna pade)
+
+// Shortest Path in Undirected Graph and edges having unit weights : Single Source BFS
+// Shortest Path in Undirected Graph and edges having weights : Dijkstra
+
+Why use Set in Dijkstra ? to erase (the longer paths to the same node)
+Why use Priority Queue/Set in Dijkstra: Taaki sabse top par sabse chhota distance rahe
+// Priority Queue/ Set approach me jab bhi ham kisi node par pahunchte hai for the first time, wo us node par pahuchne ka minimum distance hota hai.To In case PQ/Set me uspar pahuchne ke usse jyaada distances present hai to unko delete kar sakte hain
+
+
+// 0/1 Matrix, Rotten Oranges type questions: Multi Source BFS
+
+//Maximum Distance between any two nodes in a graph
+
+

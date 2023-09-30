@@ -1,0 +1,17 @@
+Given two binary images(binary Matrices) find the largest submatrix that matches in both the images?
+
+Which data structure you would use to design a traffic signal and why?
+
+
+https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/ ?
+    
+
+https://mrcet.com/downloads/digital_notes/HS/OOP_10122018.pdf
+
+DISK SHEDULING 
+CPU SHEDULING
+MEMORY MANAGEMENT
+SEMAPHORES
+PAGE FAULT
+
+Explain about types of side effects in React component.

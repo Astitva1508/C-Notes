@@ -1,0 +1,188 @@
+What is an API?
+An application programming interface is a way for two or more computer programs to communicate with each other. It is a type of software interface, offering a service to other pieces of software
+APIs let your product or service communicate with other products and services without having to know how they’re implemented
+
+Difference between Compiled and Interpreted Languages:
+    Compiled and not interpreted.program once compiled is expressed into the instructions of the target machine
+    Interpreted without compiling program into machine instructions
+
+    two steps vs one from source code to execution
+
+Give me an example where you can do constructor overloading ?
+    Example of Book and different initializations based on the info present at the time of publication of book
+
+Namespace in C++
+    provide scope in which identifiers,functions are valid
+
+Exception Handling : a mechanism to seperate code that detects and handles exceptions from the rest of your program 
+    Need for It :  
+        Better Logs for Easier Debugging.
+        Seperation of Concerns and Predictable Flow
+        Prevents Total Failure
+        User Friendly : Better message for User
+
+Try Catch Throw
+try : code that might throw an exceptions
+catch : code to handle the exceptions
+finally : always executed and used for cleanup operations that need be performed whether exception occured or not
+
+C++ vs Python
+complex vs simple(and user frinedly)
+statically Typed vs dynamically typed
+faster vs slower
+Manual Memory Management vs automatically
+
+Real Life Implementation of Stack :
+    Brwoser history 
+    Undo Redo
+
+Array vs Vector :
+Fixed size 
+Allocated at compile time in Stack
+Not resizable
+More efficient 
+Continous allocation
+
+Numpy Library :
+    used for numerical computations
+    multidimensional arrays
+    element wise operations
+    mathematical functions
+    integration with other libraries
+    parallel processing powers
+
+Function Pointer : 
+    allows to call functions at runtime 
+    used in callbacks
+    Plugin Systems
+
+Out of Bounds Array Index :
+    Undefined Behaviour(Crash, Overwriting, Apparent Correct Behaviour)
+
+HTTP vs HTTPS:
+    HTTP data transferred in plaintext hence susceptible to attacks
+    HTTPS provides secure way by using encryption.Uses SSL or TLS
+
+GET vs POST :
+    request data vs send data
+    data send in query parameters vs request body
+    visible vs not visible data 
+    idempotent vs not idempotent
+
+Big O : for worst case or upper bound 
+Omega : best case or lower bound
+Theta : both upper and lower bounds
+
+Pointers :
+    Dynamic Memory allocation
+    Pointers to functions
+    Complext DS 
+    Pass By Reference
+
+What are cookies?
+    small piece of data that websites store on users Brwoser and are useful for personalizaed results and authentication etc.
+    Third Party Cookies and Security Concerns
+
+Inner class vs sub class
+    Inner Class (Nested Class) is a class defined within scope of another Class.It is encapsulated within the Outer Class
+    SubClass (Derived Class) inherits from the parent class.
+
+Interface vs abstract class
+    Interface is a contract for class that implements it.
+    Interfaces are statless (not have constructor or anything)
+    classes that derive from them must define the implementation details
+    Promote Loose Coupling
+    common behavious acrros unrelated classes
+
+    can contain contracts + well defined methods
+    class can only inherit from one abstract class
+    when you want to provide a common base class with both method definitions and shared implementation 
+
+What is memory sequencing?
+    memory ordering refers to the order in which memory operations (such as read and write operations) are observed by different threads or processors
+
+    crucial to ensuring that programs execute correctly, especially in situations where multiple threads or cores are accessing shared memory concurrently.
+
+Difference between Natural joins and Inner join.
+    Inner Join : Join based on specified Conditions (uses ON)
+    Natural Join : Join based on column having same name
+
+Denormalization and Normalization in  Database. Asked advantages of Normalization vs Denormalization.
+    process of organizaing data in a way that reduces redundancy and dependency by decomposing tables into smaller related tables.
+    eliminates anoalies
+
+    introducing reduncancy into DB to improve query performance
+
+    Advantages of N: 
+        Less Storage
+        Better Structure 
+        Data Integrity
+
+    Advantages of DN:
+        Simplified Query and Query Performance
+        Useful for Read Heavy applications
+
+
+Encryption:
+    plain text to cipher text using algo and key
+    key is key
+    DATA Confidentiality and Secure Communication
+
+
+Which languages do you prefer? Compiled or interpreted? why?
+    Compiled bcox
+        Performance
+        Early Error Detection (at compile time)
+        Optimzations
+        Better Resourcee Utilization and more Command
+
+Which algorithms are generally used in  DBMS. (Searching and sorting )
+    Searching : B-Tree Indexing and Hashing
+    Sorting : Quick, Merge
+
+Do you know how the code is actually deployed on machines in the real world?
+    Building : creating executable files 
+    Configuration
+    Testing
+    Deployment
+    Automation
+
+
+What do you mean by full-stack web development? 
+    fronot end + backend
+    stack ka mtlb
+
+
+How does the client interact with the server? 
+    Establishing a connection
+    Sending request
+    Processing request
+    Genrating Respinse
+    Sending Response
+    Processing Response
+    Closgin the connection
+
+Given a triangle and 3 ants at each edge. They can move in any direction. Find out the probability of ants not colliding with each other. 2/8
+
+https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+
+How to read and write from a file in O(1) time complexity? 
+    Prefetching 
+    DMA 
+    File Sysyem optimization (indexing)
+    Caching
+
+How to store 1 trillion in a variable?  Long Long
+
+Types of trees, the time complexity of traversal in BST, how to decrease the height of the tree. 
+
+Generate Random Numbers in C++ : 
+    srand(time(0));
+    rand();
+
+verify the birthday paradox with code. Done
+
+static in cpp : 
+    Static Variables (Local Scope) remain the same in the subsequent fn calls 
+    Static Members and Methods in CPP members of class rather than instances
+    Static Case for explicit type conversion

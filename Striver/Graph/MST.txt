@@ -1,0 +1,8 @@
+//Spanning Tree and MST
+//Concept mainly applies to undirected weighed graph
+
+// Spanning Tree -> A Tree having N nodes and N-1 edges and all nodes are reachable from each other
+// MST ->of all the spanning trees possible for a given graph, the one which has the minimum weights sum called MST
+
+// 1->If each edge has a distinct weight then there will be only one unique MST.
+// 2->A complete undirected graph can have n ^(n - 2) number of Spanning Trees

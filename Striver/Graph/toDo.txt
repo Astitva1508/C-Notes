@@ -1,1 +1,0 @@
-Why low in the case of BinarySearch gives the index where the element needs to be added

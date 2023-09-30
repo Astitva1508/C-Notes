@@ -1,0 +1,67 @@
+There are primarily four pillars of OOPS: (A PIE)
+1. Data Abstraction : hides the implementation details and reduces code complexity
+2. Polymorphism : An object can take multiple forms
+3. Inheritance : enhances reusability
+4. Encapsulation : writing data and functions into single unit
+
+Types of Inheritance : 
+    Single level
+    Multi-level
+    Multiple
+    Hierarchical
+    Hybrid
+
+Use Case for Private Constructors : 
+Internal Constructor chaining
+Singleton class design pattern : used in  Networking and Database Connectivity.
+
+Example of Compile Time Polymorphism : Operator and Method Overloading 
+Example of Run Time Polymorphism : Method Overriding
+
+Advantages of OOPS : 
+Code Reusability 
+Code Security
+Faster to Implement and easier to redesign
+
+Disadvantage : Not suitable for all problems
+               Skilled Programmer Needed
+               Larger Length of Program
+
+Destructor cannot be declared as static and const
+
+
+Code for Operator Overloading:
+    class Complex {
+    private:
+    int real, imag;
+    public:
+    Complex(int r = 0, int i = 0) {real = r; imag = i;}
+        
+    // This is automatically called when '+' is used with
+    // between two Complex objects
+    Complex operator + (Complex const &obj) {
+        Complex res;
+        res.real = real + obj.real;
+        res.imag = imag + obj.imag;
+        return res;
+    }
+    void print() { cout << real << " + i" << imag << '\n'; }
+    };
+
+
+Class is Abstract, if we have atleast one pure virtual function.
+
+Programming Paradigms beside OOPS
+Imperative : changing the state using assignent statements.
+             focuses on achieving the end goal
+             Procedural
+             OOPS
+             Parallel
+
+Declarative : focuses on what to execute instead of how to execute
+              Logic matters over flow
+              Logical
+              Functional
+              Database
+
+Structures vs OOPS?
