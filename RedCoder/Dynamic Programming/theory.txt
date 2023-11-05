@@ -1,0 +1,25 @@
+Where DP?
+1. Overlapping SubProblems
+2. Minimize/Maximize Some Value
+3. Finding Number Of Ways
+4. Covering all Cases(DP vs Greedy)
+5. Check for possibility
+
+
+Think if you can find the below three things in the problem :
+State  
+Transition Function
+Base Case 
+
+Types of DP
+Push DP -> every state gives its contribution to the states that depends on it(i.e to the future DP states)
+Pull DP -> every state takes its contribution from the states on which it depends
+
+
+// Always in DP, try to add some meaning to the state
+// You always have to think -> How my current state is going to contribute to further states
+// If it does not contribute, then that state is meaningless
+
+// dp[i][j] storing information for range i to j
+// dp[i] storing information till i
+// dp[i] storing information where i must be included
