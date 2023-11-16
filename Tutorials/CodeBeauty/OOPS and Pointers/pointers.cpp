@@ -27,7 +27,7 @@ void smartPointers(){
     //unique_ptr<int>unqPtr creates a unique pointer with the name of unqPtr to store the address of some integer and then the make_unique<int> method is used to create a unique pointer of type int.The value in the argument is the one that is stored at the address stored in uniquePtr
     //Unique Pointers cannot be shared.i.e Two unique pointers cannot store the same address
     // unique_ptr<int>unqPtr2 = unqPtr; //throws an error
-    //We can however move the ownership of a uniqie pointer and in this case the previous owner becomes NULL Pointer and if we try to access the value stored at the previous owner , we get a NULL_POINTER_EXCEPTION
+    //We can however move the ownership of a unique pointer and in this case the previous owner becomes NULL Pointer and if we try to access the value stored at the previous owner , we get a NULL_POINTER_EXCEPTION
     unique_ptr<int>unqPtr2 = move(unqPtr);
     cout<<*unqPtr2<<endl;
 
