@@ -17,7 +17,42 @@ using namespace std;
 // Time Complexity : O(V+E)
 // Applying Topo on Directed Cyclic Graph gives lesser elements than number of vertices
 
-int main(){
-    
+void topo(vector<vector<pair<int, int>>> &adj)
+{
+    int nodes = adj.size();
+    vector<int> ans;
+    vector<int> inorder(nodes, 0);
+    for (int i = 0; i < nodes; i++)
+    {
+        for (auto j : adj[i])
+        {
+            inorder[j.first]++;
+        }
+    }
+    queue<int> q;
+    for (int i = 0; i < nodes; i++)
+    {
+        if (inorder[i] == 0)
+            q.push(i);
+    }
+
+    while (!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+        ans.push_back(node);
+
+        for (auto it : adj[node])
+        {
+            inorder[it.first]--;
+            if (inorder[it.first] == 0)
+                q.push(it.first);
+        }
+    }
+}
+
+int main()
+{
+
     return 0;
 }

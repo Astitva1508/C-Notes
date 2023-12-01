@@ -28,8 +28,8 @@ void shiftDown(int index){
     int left = leftChild(index);
     int right = rightChild(index);
 
-    if(left<sz && PQ[desiredIndex]<PQ[left]) desiredIndex=left;
-    if(right<sz && PQ[desiredIndex]<PQ[right]) desiredIndex=right;
+    if(left<=sz && PQ[desiredIndex]<PQ[left]) desiredIndex=left;
+    if(right<=sz && PQ[desiredIndex]<PQ[right]) desiredIndex=right;
 
     if(index!=desiredIndex){
         swap(PQ[index],PQ[desiredIndex]);

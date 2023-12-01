@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 
+// One single observation for Huffman Code ->
+// All the characters are the leaf nodes i.e they neither have left nor right child
+
+
 using namespace std;
 
 // Define a structure for Huffman Tree Nodes

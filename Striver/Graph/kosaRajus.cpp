@@ -78,6 +78,7 @@ public:
 
 void theory(){
     // Kosaraju's Algo used to find Strongly Connected Components(SCC)
+
     // Possible Questions :
     // Figure out the number of SCC's
     // Print the SCC

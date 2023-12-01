@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Crux of Bellman Ford is that it relaxes the edges for N-1 times
+
 vector<int> bellman_ford(int V, vector<vector<int>> &edges, int S)
 {
     vector<int> dist(V, 1e8);
